@@ -1,0 +1,233 @@
+<configuration>
+
+	<!-- Home Screen search icon -->
+	<!-- When shipping devices in markets where the default Google Search
+	     engine is not available, device manufacturers can replace the Google
+	     Search application with another search application. If they replace
+	     Google Search, they MUST provide a custom icon for the application
+	     to display on the Home Screen in place of the Google Search logo.
+	     The dimensions for the custom icon can be found on the Android TV UX
+	     design guidelines documentation.
+	     To replace the default search icon, provide a URI to the bitmap of
+	     the icon, this can be a URI to an external server or to a local file 
+	     content Provider.
+	     This configuration should NOT be used in countries where Google 
+	     search is mandatory. -->
+	<!-- [SEI-Jesseyao-2018-02-25] No need to change the icon of search -->
+	<!-- <partner-search-icon icon_uri="android.resource://com.google.android.leanbacklauncher.partnercustomizer/mipmap/ic_search_mic_out_focused" /> -->
+
+	<!-- OEMs can customize the behavior of the input panel using the following
+	     attributes:
+	     disable_disconnected_inputs (boolean) - OEMs can choose if Input entries
+	     that are indicated as disconnected (via TIF) should be represented as
+	     disabled in the Home Screen or not.
+	     Disabled inputs are grayed out on the UI and moved to the end of the
+	     inputs list (after all enabled inputs), and are not actionable (clicking
+	     on them has no effect).
+	
+	     disconnected_input_text (string) - OEMs can choose to show a toast when
+	     the user selects a disconnected input.
+	
+	     show_inputs (boolean) - OEMs can choose to show or hide the inputs icon
+	     at the top row of the Home Screen by setting this flag to true or false.
+	
+	     enable_input_state_icon (boolean) - OEMs can supply their own icons for
+	     each state of each input.
+	     This feature can be enabled by setting this boolean flag to true.
+	     To supply the icons, OEMs must use the setIcon(Icon icon, int state)
+	     method in TvInputInfo.Builder to set the icon for each of these states:
+	
+	     TvInputManager.INPUT_STATE_CONNECTED
+	     TvInputManager.INPUT_STATE_CONNECTED_STANDBY
+	     TvInputManager.INPUT_STATE_DISCONNECTED -->
+	<!-- [SEI-Jesseyao-2018-02-25] We don't need to config inputs -->
+	<!-- <inputs-configuration
+	    bundled_tuner_banner="content://uri_to_banner"
+	    bundled_tuner_title="title here"
+	        disable_disconnected_inputs="true"
+	        disconnected_input_text="put text here"
+	        enable_input_state_icon="false"
+	        show_inputs="false"
+	        show_physical_tuners_separately="true">
+	    <home-screen-inputs-ordering>
+	        <input-type>input_type_combined_tuners</input-type>
+	        <input-type>input_type_hdmi</input-type>
+	        <input-type>input_type_scart</input-type>
+	    </home-screen-inputs-ordering>
+	</inputs-configuration> -->
+
+    <!-- Apps View order -->
+    <!-- OEMs can customize the Home Screen Apps view by reordering the Apps, 
+    Games and Recommendations rows or removing the Games row completely. To do so, 
+    choose one of these options to set the desired order in the configuration file:
+	Apps, OEM, Games: apps_oem_games
+	Apps, Games, OEM: apps_games_oem
+	Games, Apps, OEM: games_apps_oem
+	Apps, OEM: apps_oem-->
+    <apps-view-layout rows_order = "apps_games_oem" />
+
+	<!-- OEMs can define which apps will show up in the favorite apps row out
+	     of box in the Home Screen by providing a list of apps (name and package
+	     name). This list should be up to 8 apps and the system will use the
+	     first 8 apps on this list of more than 8 are provided.
+	     The list should comply with the GTVS app placement requirements
+	     (see: requirements page)
+	     -->
+	<partner-favorite-apps-out-of-box-order>
+        <!-- App pinning only for operator -->
+    	<!-- Use attributes can_move="false" and can_hide="false" to pin an app at its defined position.
+			You can pin only one app at position 0, or two apps at positions 0 and 1. -->
+        <!-- <app
+            name="name1"
+            can_move="false"
+            can_hide="false"
+            package_name="com.package.name1" />
+        <app
+            name="name2"
+            can_move="false"
+            can_hide="false"
+            package_name="com.package.name2" /> -->
+        <app
+            name="Netflix"
+            package_name="com.netflix.ninja" />
+        <app
+	    name="Youtube"
+	    package_name="com.google.android.youtube.tv" />
+	<app
+            name="Google Play Movies"
+	    package_name="com.google.android.videos" />
+	</partner-favorite-apps-out-of-box-order>
+
+	<!-- OEMs can customize the initial order of apps in the apps row of the Apps
+	     View by providing a list of up to 20 apps (name and package name). All 
+	     other games will be sorted alphabetically. 
+	     The list should comply with the GTVS app placement requirements
+	     (see: requirements page)
+	     -->
+	<partner-all-apps-out-of-box-order>
+           <!--[SEI-wangsw-2020-04-27]the first 4 are demo applications, which should be covered later, Youtube should start from the 4th application{-->
+           <app
+                name="Netflix"
+                package_name="com.netflix.ninja" />
+           <app
+                name="Movie Player"
+                package_name="com.droidlogic.videoplayer" />
+            <app
+                name="Live TV"
+                package_name="com.android.tv" />
+            <app
+                name="Live Channels"
+                package_name="com.google.android.tv" />
+	    <app
+	        name="Youtube"
+	        package_name="com.google.android.youtube.tv" />
+	    <app
+	        name="Google Play Movies"
+	        package_name="com.google.android.videos" />
+	    <app
+	        name="Google Play Music"
+	        package_name="com.google.android.music"/>
+	    <app 
+	        name="Google Play Store"
+	        package_name="com.android.vending"/>
+	    <app 
+	        name="Google Play Games"
+	        package_name="com.google.android.play.games"/>
+            <!--[SEI-wangsw-2020-04-27]the first 4 are demo applications, which should be covered later, Youtube should start from the 4th application}-->
+	</partner-all-apps-out-of-box-order>
+
+	<!-- OEMs can customize the initial order of apps in the games row of the Apps
+	     View by providing a list of up to 10 apps (name and package name). All 
+	     other games will be sorted alphabetically.
+	     -->
+	<partner-games-out-of-box-order>
+	    <!-- <app
+	        name="app name 1"
+	        package_name="com.package.name1" />
+	    <app
+	        name="app name 2"
+	        package_name="com.package.name2" /> -->
+	</partner-games-out-of-box-order>
+	
+	<!-- By default channels are added to the UI in the order that they are added
+	     by apps. A channel will be added to the bottom of the list of channel
+	     when it is added by an app. OEMs can customize the initial order by
+	     providing a list of package names. When one of the packages in the list 
+	     inserts a channel the system will insert it in the position indicated in
+	     list. If while the channels are being inserted, the user changed to order
+	     of the channels manually, the system will make the best effort to respect
+	     the initial order while still preserving the user's channels order setup.
+	     The initial order is limited to one channel per app, duplicates will be
+	     ignored.
+	     The list should comply with the GTVS app placement requirements
+	     (see: requirements page)
+	     -->
+	<partner-channels-out-of-box-order>
+        <!-- Channel pinning only for operator -->
+    	<!-- Use attributes can_move="false" and can_hide="false" to pin a channel 
+			at its defined position. You can pin only one channel at position 0. -->
+	    <!-- <package-name system_channel_key="oem-key1"
+            can_move="false" 
+            can_hide="false">
+                com.package.name1</package-name> -->
+		<package-name>com.netflix.ninja</package-name>
+	    <package-name>com.google.android.youtube.tv</package-name>
+	    <package-name>com.google.android.videos</package-name>
+	</partner-channels-out-of-box-order>
+	
+	<!-- Android TV supports a limited set of system notifications. The system
+	     filters all notifications and shows notifications only from a limited list
+	     of whitelisted packages. The list is controlled by the system and already
+	     includes Google's packages. OEMs can whitelist more packages by adding
+	     them to the notification whitelist.
+	     This list should only be used to whitelist system apps that want to show
+	     important notifications that the user must handle (examples are: no
+	     network, low battery on the remote, low storage etc…). It should NOT be
+	     used by apps to promote content or features.  
+	     -->
+    <partner-package-notification-whitelist>
+	    <package-name>com.nes.blerc</package-name>
+	    <package-name>com.nes.update</package-name>
+	    <package-name>com.nanosic.www.remoteota</package-name>
+	    <package-name>com.realsil.ota</package-name>
+	    <package-name>com.nes.remoteota.six</package-name>
+	    <package-name>com.nes.remoteota.one</package-name>
+	    <package-name>com.nes.androidtv.secure</package-name>
+    </partner-package-notification-whitelist>
+     
+    <!-- Live tv app channel configuration -->
+    <!-- You can use Live TV package name either in 
+	    <live-tv-app-channel> or <partner-channels-out-of-box-order> configurations, 
+	    but not in both. If used in both, the system uses one and ignores the other. -->
+    <!-- <live-tv-app-channel 
+	    package_name="com.livetv.package.name" 
+	    system_channel_key="id1" 
+	    out_of_box_position="2"/> -->
+	
+	<!-- By default, each app gets to show one channel in the UI without user's
+	     approval. OEMs can change the number of channels allowed without user's
+	     approval by providing a list of apps and and the number of pre-approved 
+	     channels (quota) for each app.
+	     -->
+	<partner-app-channel-quota>
+	    <app
+	        package_name="com.google.android.videos"
+	        quota="2" />
+	    <app
+	        package_name="com.google.android.youtube.tv"
+	        quota="4" />
+	</partner-app-channel-quota>
+
+    <!-- Configure channels app order in the Channels configuration tray -->
+    <configure-channels-app-order>
+        <!--<package-name>com.example.package</package-name> -->
+    </configure-channels-app-order>
+    
+    <!-- Custom Background only for operator -->
+    <!-- <home-background uri="https://example.com/background.jpeg" /> -->
+    
+    <!-- launch after boot configuration -->
+    <!-- <launch-after-boot
+	    package_name="com.livetv.launchafterboot"
+	    force_launch="true"/> -->
+</configuration>

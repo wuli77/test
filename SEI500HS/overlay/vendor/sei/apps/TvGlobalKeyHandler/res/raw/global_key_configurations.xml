@@ -1,0 +1,94 @@
+<configurations>
+
+    <!-- Factory Test -->
+    <key KeyCode="5115">
+        <key_name>KEYCODE_NES_SHORTCUT_01</key_name>
+        <package_name>com.utsmta.app.showapp</package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+    <!-- ALL APPS -->
+    <key KeyCode="5116">
+        <key_name>KEYCODE_NES_SHORTCUT_02</key_name>
+        <package_name></package_name>
+        <class_name></class_name>
+        <action_name>android.intent.action.ALL_APPS</action_name>
+    </key>
+
+    <!-- Netflix -->
+    <key KeyCode="5117">
+        <key_name>KEYCODE_NES_SHORTCUT_03</key_name>
+        <package_name>com.netflix.ninja</package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+    <!-- Youtube -->
+    <key KeyCode="5118">
+        <key_name>KEYCODE_NES_SHORTCUT_04</key_name>
+        <package_name>com.google.android.youtube.tv</package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+    <!-- DVB -->
+    <key KeyCode="5119">
+        <key_name>KEYCODE_NES_SHORTCUT_05</key_name>
+        <package_name></package_name>
+        <class_name></class_name>
+        <action_name>com.nes.intent.action.NES_LIVE_TV</action_name>
+    </key>
+
+    <key KeyCode="5120">
+        <key_name>KEYCODE_NES_SHORTCUT_06</key_name>
+        <package_name>com.google.android.music</package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+    <key KeyCode="5121">
+        <key_name>KEYCODE_NES_SHORTCUT_07</key_name>
+        <package_name>com.google.android.videos</package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+    <key KeyCode="5122">
+        <key_name>KEYCODE_NES_SHORTCUT_08</key_name>
+        <package_name>com.android.vending</package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+    <key KeyCode="5123">
+        <key_name>KEYCODE_NES_SHORTCUT_09</key_name>
+        <package_name>com.android.tv</package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+    <key KeyCode="5124">
+        <key_name>KEYCODE_NES_SHORTCUT_10</key_name>
+        <package_name>com.android.tv.settings</package_name>
+        <class_name>com.android.tv.settings.MainSettings</class_name>
+        <action_name></action_name>
+    </key>
+
+    <!-- For Router device reset -->
+    <key KeyCode="5103">
+        <key_name>KEYCODE_NES_ROUTER_RESET</key_name>
+        <package_name></package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+    <!-- For Router device reboot -->
+    <key KeyCode="5104">
+        <key_name>KEYCODE_NES_ROUTER_REBOOT</key_name>
+        <package_name></package_name>
+        <class_name></class_name>
+        <action_name></action_name>
+    </key>
+
+</configurations>
