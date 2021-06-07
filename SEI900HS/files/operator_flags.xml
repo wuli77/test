@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<config>
+    <!-- Confirms that a device is eligible for the suite of Operator customizations -->
+    <feature name="com.google.android.tv.operator_tier" />
+	
+    <!-- Confirms that a device is *eligible* for a Custom Launcher eligible-->
+    <feature name="com.google.android.tv.custom_launcher_eligible" />
+
+</config>
